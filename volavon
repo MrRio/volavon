@@ -12,7 +12,6 @@ do
 					if [[ "$muted" == 0 ]]
 						then
 							currentVolume=`osascript -e "output volume of (get volume settings)"`
-							currentVolume=$((currentVolume/10))
 						fi
 					muted=1
 	                osascript -e "set Volume 2"
@@ -21,7 +20,7 @@ do
 					if [[ "$muted" == 1 ]]
 						then
 							echo "Turn back up"
-							osascript -e "set Volume $currentVolume"
+							osascript -e "set volume output volume $currentVolume"
 					fi
 					muted=0
 			fi

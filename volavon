@@ -1,0 +1,14 @@
+#!/bin/bash  
+while [ true ]
+do
+	if ! ./headphone-detector | grep "Headphones"
+	    then
+	        echo "Outside"
+	        if ! curl --silent http://192.168.2.28:8080/sbar.html | grep Idle
+	            then
+	                osascript -e "set Volume 2"
+	                echo "Turn volume down"
+	        fi
+	fi
+	sleep 1
+done

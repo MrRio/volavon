@@ -14,7 +14,7 @@ do
 							currentVolume=`osascript -e "output volume of (get volume settings)"`
 						fi
 					muted=1
-	                osascript -e "set Volume 2"
+	                osascript -e "set Volume 1"
 	                echo "Turn volume down"
 				else
 					if [[ "$muted" == 1 ]]

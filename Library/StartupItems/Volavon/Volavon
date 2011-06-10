@@ -1,0 +1,5 @@
+#!/bin/bash
+
+. /etc/rc.common
+ConsoleMessage "Starting Volavon"
+nohup /usr/bin/volavon &

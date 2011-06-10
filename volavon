@@ -6,7 +6,6 @@ while [ true ]
 do
 	if ! ./headphone-detector | grep "Headphones"
 	    then
-	        echo "Outside"
 	        if ! curl --silent http://192.168.2.28:8080/sbar.html | grep Idle
 	            then
 					if [[ "$muted" == 0 ]]
@@ -19,12 +18,10 @@ do
 					if [ $checkVolume -gt 10 ]
 						then
 			                osascript -e "set volume output volume 10"
-			                echo "Turn volume down"
 						fi
 				else
 					if [[ "$muted" == 1 ]]
 						then
-							echo "Turn back up"
 							osascript -e "set volume output volume $currentVolume"
 					fi
 					muted=0
